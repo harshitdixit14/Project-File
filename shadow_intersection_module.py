@@ -64,8 +64,8 @@ for (x, y), h in user_input.items():
     ax.bar3d(x, y, 0, 3, 3, h, shade=True, alpha=0.6, color='skyblue')  # bar3d(x, y, z, dx, dy, dz)
     ax.text(x + 0.5, y + 0.5, h + 0.1, f'{h}', ha='center', va='bottom', fontsize=10, color='black')
 
-ax.set_xlabel('X (Cols)')
-ax.set_ylabel('Y (Rows)')
+ax.set_xlabel('Latitude')
+ax.set_ylabel('Longitude')
 ax.set_zlabel('Height')
 ax.set_xlim(0, 90)
 ax.set_ylim(0, 90)
@@ -91,7 +91,10 @@ for (x,y) in user_input:
     obs_location=EarthLocation(lat=x*u.deg,lon=y*u.deg)
     altaz=sun.transform_to(AltAz(obstime=now,location=obs_location))
     elevation_angle.append(altaz.alt.deg)
-    azimuth_angle.append(altaz.az.deg)
+    if(360-altaz.az.deg<180):
+        azimuth_angle.append(360-altaz.az.deg)
+    elif(360-altaz.az.deg>=180):
+        azimuth_angle.append(altaz.az.deg)
 shadow_points_and_height={}
 
 # we are not able to map correctly the user input coord with shadowed last coord
