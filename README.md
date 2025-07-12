@@ -10,3 +10,29 @@ hour circle - it is the circle through the given object and two poles north and 
 
 
 solar declination angle - 
+
+
+
+
+
+
+
+# study and shadow modelling for first components
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,13 @@
+'''
+furthur improvements can be done regarding whether our drone is flying 
+at particular height to ever come in range of shadow
+because it depeds on height of obstacle and height of drone fly to come in
+range of shadwo
+'''
+
+
+
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from astropy.coordinates import EarthLocation, AltAz, get_sun
